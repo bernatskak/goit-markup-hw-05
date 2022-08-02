@@ -116,10 +116,12 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
+
 .nav-link:hover,
 .nav-link:focus {
   color: var(--current-color);
 }
+
 .contact .contact-type {
   display: flex;
   margin-right: 50px;
