@@ -111,31 +111,27 @@ body {
   padding-bottom: 32px;
 }
 .nav-link {
-  position: relative;
   color: var(--main-color);
-  position: relative;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: color 250ms var(--transition-timing-function);
 }
-.nav-link::after {
+.active {
+  position: relative;
+}
+.active::after {
   position: absolute;
   left: 0;
   bottom: 0;
   content: '';
-  display: block;
   width: 100%;
   height: 4px;
-  border: 1px solid #000000;
   border-radius: 2px;
   background-color: var(--current-color);
-  opacity: 0;
-  transition: 250ms var(--transition-timing-function);
 }
-.nav-link:hover::after {
-  opacity: 1;
-}
+
 .nav-link:hover,
 .nav-link:focus {
   color: var(--current-color);
@@ -149,7 +145,9 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: color 250ms var(--transition-timing-function);
 }
+
 .contact {
   margin-left: auto;
 }
@@ -167,7 +165,7 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  transition: 250ms var(--transition-timing-function);
+  transition: color 250ms var(--transition-timing-function);
 }
 
 .contact-mail:hover,
@@ -179,13 +177,12 @@ body {
   margin-right: 10px;
   background-position: center;
   background-size: contain;
-  transition: 250ms var(--transition-timing-function);
+  transition: color 250ms var(--transition-timing-function);
 }
-.contact-icon:hover,
-.contact-icon:focus {
+.contact-mail-icon:hover,
+.contact-mail-icon:focus {
   color: var(--current-color);
 }
-
 .contact-tel:hover,
 .contact-tel:focus {
   color: var(--current-color);
@@ -195,12 +192,16 @@ body {
   margin-right: 10px;
   background-position: center;
   background-size: contain;
-  transition: 250ms var(--transition-timing-function);
+  transition: color 250ms var(--transition-timing-function);
+}
+.contact-tel-icon:hover,
+.contact-tel-icon:focus {
+  color: var(--current-color);
 }
 /*Hero*/
 
 .section-title {
-  position: relative;
+  /*position: relative;*/
   max-width: 1600px;
   height: 600px;
   margin-left: auto;
@@ -213,32 +214,14 @@ body {
   background-position: center;
   background-size: cover;
 }
-.section-title::before {
-  display: inline-block;
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(47, 48, 58, 0.8);
-  opacity: 0;
-  transition: 250ms var(--transition-timing-function);
-}
-
-.section-title:hover::before {
-  opacity: 1;
-}
 
 .container-title {
-  position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0px;
   padding-left: 15px;
   padding-right: 15px;
   width: 1200px;
-  opacity: 1;
 }
 
 .main-title {
@@ -272,7 +255,7 @@ body {
 
   cursor: pointer;
   font-family: inherit;
-  transition: 250ms var(--transition-timing-function);
+  transition: background-color 250ms var(--transition-timing-function);
 }
 .button:hover,
 .button:focus {
@@ -483,7 +466,8 @@ img {
   align-items: center;
   justify-content: center;
   color: #afb1b8;
-  transition: 250ms var(--transition-timing-function);
+  transition: color 2500ms var(--transition-timing-function),
+    background-color 250ms var(--transition-timing-function);
 }
 .team-soc-item {
   width: 44px;
@@ -521,7 +505,8 @@ img {
   border: 1px solid #afb1b8;
   color: #afb1b8;
   border-radius: 4px;
-  transition: 250ms var(--transition-timing-function);
+  transition: border-color 250ms var(--transition-timing-function),
+    color 250ms var(--transition-timing-function);
 }
 .clients-icon {
   fill: currentColor;
@@ -629,7 +614,7 @@ img {
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
-  transition: 250ms var(--transition-timing-function);
+  transition: background-color 250ms var(--transition-timing-function);
 }
 .soc-link:hover,
 .soc-link:focus {
@@ -663,7 +648,7 @@ img {
   cursor: pointer;
   border-radius: 4px;
   font-family: inherit;
-  transition: 250ms var(--transition-timing-function);
+  transition: box-shadow 250ms var(--transition-timing-function);
 }
 .button-filter-all:hover,
 .button-filter-all:focus {
@@ -679,7 +664,9 @@ img {
   border-radius: 4px;
   color: var(--main-color);
   background-color: var(--badge-bg-color);
-  transition: 250ms var(--transition-timing-function);
+  transition: color 250ms var(--transition-timing-function),
+    background-color 250ms var(--transition-timing-function),
+    box-shadow 250ms var(--transition-timing-function);
 }
 .button-filter:hover,
 .button-filter:focus {
@@ -740,7 +727,7 @@ img {
 }
 .project-img {
   text-decoration: none;
-  transition: 250ms var(--transition-timing-function);
+  transition: box-shadow 250ms var(--transition-timing-function);
 }
 .project-img:hover,
 .project-img:focus {
@@ -785,12 +772,11 @@ img {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
-  opacity: 1;
   transition: opacity 250ms var(--transition-timing-function),
     visibility 250ms var(--transition-timing-function);
 }
 
-.backdrop.is-hidden {
+.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
