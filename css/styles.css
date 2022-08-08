@@ -177,7 +177,6 @@ body {
   margin-right: 10px;
   background-position: center;
   background-size: contain;
-  transition: color 250ms var(--transition-timing-function);
 }
 .contact-mail-icon:hover,
 .contact-mail-icon:focus {
@@ -192,7 +191,6 @@ body {
   margin-right: 10px;
   background-position: center;
   background-size: contain;
-  transition: color 250ms var(--transition-timing-function);
 }
 .contact-tel-icon:hover,
 .contact-tel-icon:focus {
@@ -466,7 +464,7 @@ img {
   align-items: center;
   justify-content: center;
   color: #afb1b8;
-  transition: color 2500ms var(--transition-timing-function),
+  transition: color 250ms var(--transition-timing-function),
     background-color 250ms var(--transition-timing-function);
 }
 .team-soc-item {
